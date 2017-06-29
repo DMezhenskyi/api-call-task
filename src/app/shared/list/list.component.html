@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a target="_blank" [href]="pullRequest.html_url">{{ pullRequest.title }}</a>
+  </div>
+  <div class="panel-body">
+    <span>#{{ pullRequest.number }}</span> |
+    <span class="label label-success">State: {{ pullRequest.state }}</span> |
+    <span>Last update at: {{ pullRequest.updated_at | date: 'longDate' }}</span>
+  </div>
+</div>

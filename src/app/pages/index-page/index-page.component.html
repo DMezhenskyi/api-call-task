@@ -1,0 +1,17 @@
+<section class="container">
+  <h3>GitHub pull requests <span class="label label-info label-custom">Showed: {{ pullRequests.length }} pull requests</span></h3>
+  <form class="search-form" >
+    <input [formControl]="queryControl"
+           type="search"
+           placeholder="Start type to filter"
+           class="form-control"
+    >
+  </form>
+  <div class="search-result">
+    <app-list *ngFor="let pullRequest of pullRequests" [pullRequest]="pullRequest"></app-list>
+  </div>
+  <div class="alert alert-info" *ngIf="isLoading">Loading data from GitHub API...</div>
+  <div class="alert alert-warning"
+       *ngIf="isLoading === false && pullRequests.length === 0"
+  >Pull requests with such title was not found</div>
+</section>
